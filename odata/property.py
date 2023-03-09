@@ -311,6 +311,8 @@ class UUIDProperty(StringProperty):
     filters do not use quotes for UUID
     """
     def serialize(self, value):
+        if value is None:
+            return None
         return str(value)
 
     def deserialize(self, value):
